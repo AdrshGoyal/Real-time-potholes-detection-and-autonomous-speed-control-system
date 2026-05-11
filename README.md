@@ -4,7 +4,7 @@
 
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![Framework](https://img.shields.io/badge/Framework-Streamlit-red)](https://streamlit.io/)
-[![AI Model](https://img.shields.io/badge/AI%20Model-YOLOv8-yellow)](https://github.com/ultralytics/ultralytics)
+[![AI Model](https://img.shields.io/badge/AI%20Model-YOLOv11l-yellow)](https://github.com/ultralytics/ultralytics)
 [![License](https://img.shields.io/badge/License-MIT-green)](#license)
 [![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)]()
 
@@ -18,7 +18,7 @@
 
 ## 📋 Overview
 
-This project implements an **AI-powered pothole detection and autonomous speed control system** that uses real-time video analysis to identify potholes on roads and automatically adjusts vehicle speed accordingly. The system combines state-of-the-art **YOLOv8 object detection** with an **Arduino-based control mechanism** to provide an integrated solution for improving road safety.
+This project implements an **AI-powered pothole detection and autonomous speed control system** that uses real-time video analysis to identify potholes on roads and automatically adjusts vehicle speed accordingly. The system combines state-of-the-art **YOLOv11l object detection** with an **Arduino-based control mechanism** to provide an integrated solution for improving road safety.
 
 ### Key Concept
 The system processes video feeds in real-time, detects potholes using deep learning, and triggers autonomous speed reduction through serial communication with an Arduino microcontroller. This prevents vehicle damage and ensures passenger safety.
@@ -29,8 +29,8 @@ The system processes video feeds in real-time, detects potholes using deep learn
 
 | Feature | Description |
 |---------|-------------|
-| 🎯 **Real-Time Detection** | Process video frames at high FPS using YOLOv8 |
-| 🤖 **Deep Learning Model** | Pre-trained YOLOv8 for pothole and object detection |
+| 🎯 **Real-Time Detection** | Process video frames at high FPS using YOLOv11l |
+| 🤖 **Deep Learning Model** | Pre-trained YOLOv11l for pothole and object detection |
 | 📊 **Dual Processing Modes** | Support for both Streamlit and Flask-based interfaces |
 | 🔧 **Hardware Integration** | Arduino serial communication for speed control signals |
 | 🎬 **Video Processing** | Supports MP4, AVI, and MOV formats |
@@ -73,7 +73,7 @@ Watch the system in action! This video demonstrates real-time pothole detection 
 <summary><strong>🎬 Click to Expand Video Demo</strong></summary>
 
 #### What You'll See in the Demo:
-✅ Real-time pothole detection using YOLOv8  
+✅ Real-time pothole detection using YOLOv11l  
 ✅ Bounding boxes around detected obstacles  
 ✅ Speed control status updates (LOW SPEED / HIGH SPEED)  
 ✅ Smooth video processing at 30+ FPS  
@@ -95,7 +95,7 @@ Watch the system in action! This video demonstrates real-time pothole detection 
 
 ### Core Technologies
 - **Python 3.8+** - Programming language
-- **YOLOv8** - Object detection framework
+- **YOLOv11l** - Object detection framework
 - **PyTorch/TorchVision** - Deep learning backends
 - **OpenCV** - Computer vision library
 - **Streamlit** - Web UI framework
@@ -147,7 +147,7 @@ pip install -r requirements.txt
 
 ### Step 4: Download Pre-trained Model
 
-The pre-trained YOLOv8 model (`my_model.pt`) is included in the repository. If needed, train a custom model using `Train_YOLO_Models.ipynb`.
+The pre-trained YOLOv11l model (`my_model.pt`) is included in the repository. If needed, train a custom model using `Train_YOLO_Models.ipynb`.
 
 ### Step 5: Configure Arduino Connection
 
@@ -222,7 +222,7 @@ Real-time-potholes-detection-and-autonomous-speed-control-system/
 │   └── main.py                       # Entry point
 │
 ├── 🤖 Model & Weights
-│   └── my_model.pt                   # Pre-trained YOLOv8 model (19.1 MB)
+│   └── my_model.pt                   # Pre-trained YOLOv11l model (19.1 MB)
 │
 ├── 📹 Demo & Assets
 │   ├── real.mp4                      # Sample video for testing
@@ -255,7 +255,7 @@ Real-time-potholes-detection-and-autonomous-speed-control-system/
          │
          ▼
 ┌─────────────────────────┐
-│  YOLOv8 Detection       │  Detect potholes and obstacles
+│  YOLOv11l Detection       │  Detect potholes and obstacles
 │  (640x640 inference)    │  Confidence threshold: 0.5
 └────────┬────────────────┘
          │
@@ -281,7 +281,7 @@ Real-time-potholes-detection-and-autonomous-speed-control-system/
 ### Detection Logic Flow
 
 1. **Frame Processing**: Input video frame undergoes preprocessing
-2. **YOLO Inference**: YOLOv8 model detects objects with confidence > 0.5
+2. **YOLO Inference**: YOLOv11l model detects objects with confidence > 0.5
 3. **Spatial Analysis**: Checks if detections are below the middle reference line
 4. **Temporal Smoothing**: Uses a 10-frame buffer to reduce false positives
 5. **Speed Decision**:
@@ -312,11 +312,11 @@ Real-time-potholes-detection-and-autonomous-speed-control-system/
 
 ## 📊 Model Architecture & Performance
 
-### YOLOv8 Specifications
+### YOLOv11l Specifications
 
 | Parameter | Value |
 |-----------|-------|
-| **Model Type** | YOLOv8n (Nano) |
+| **Model Type** | YOLOv11ln (Nano) |
 | **Input Size** | 640 × 640 pixels |
 | **Framework** | PyTorch |
 | **Pre-training** | COCO Dataset |
@@ -335,7 +335,7 @@ Real-time-potholes-detection-and-autonomous-speed-control-system/
 
 The `Train_YOLO_Models.ipynb` notebook includes:
 - Custom dataset loading
-- YOLOv8 model initialization
+- YOLOv11l model initialization
 - Data augmentation strategies
 - Training loops with validation
 - Model evaluation and metrics
@@ -479,7 +479,7 @@ View sample outputs and performance metrics:
 
 ### Planned Enhancements
 
-- [ ] **Multi-Model Ensemble** - Combine YOLOv8 with other detectors for higher accuracy
+- [ ] **Multi-Model Ensemble** - Combine YOLOv11l with other detectors for higher accuracy
 - [ ] **3D Depth Estimation** - Use stereo vision for distance calculation
 - [ ] **Kalman Filtering** - Advanced trajectory prediction for moving obstacles
 - [ ] **GPS Integration** - Map potholes and create risk heat maps
@@ -564,7 +564,7 @@ copies of the Software.
 
 ### Acknowledgments
 
-- **YOLOv8** by Ultralytics for the powerful object detection framework
+- **YOLOv11l** by Ultralytics for the powerful object detection framework
 - **Streamlit** for the amazing web UI framework
 - **PyTorch** team for the deep learning foundation
 - **OpenCV** community for computer vision tools
@@ -630,7 +630,7 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac output.mp4
 
 ### Related Resources
 
-- [YOLOv8 Documentation](https://docs.ultralytics.com/)
+- [YOLOv11l Documentation](https://docs.ultralytics.com/)
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [PyTorch Documentation](https://pytorch.org/docs/)
 - [OpenCV Documentation](https://docs.opencv.org/)
@@ -638,7 +638,7 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac output.mp4
 
 ### Similar Projects
 
-- [YOLOv8 Real-Time Detection](https://github.com/ultralytics/ultralytics)
+- [YOLOv11l Real-Time Detection](https://github.com/ultralytics/ultralytics)
 - [Streamlit Computer Vision](https://github.com/streamlit/streamlit-demo-app)
 - [Arduino Vehicle Control](https://github.com/topics/arduino-vehicle)
 
